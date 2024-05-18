@@ -13,5 +13,10 @@ define LDD_BUILD_CMDS
     cp $(BR2_EXTERNAL)/../include/* $(@D)
 endef
 
+
+define LDD_INSTALL_TARGET_CMDS
+     $(INSTALL) -D -m 0755 $(@D)/scull.ko $(BR2_ROOTFS_OVERLAY)/lib/modules/6.8.9/ldd/scull
+endef
+
 $(eval $(kernel-module))
 $(eval $(generic-package))
