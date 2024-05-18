@@ -1,0 +1,6 @@
+
+config BR2_PACKAGE_MODULE
+	bool "module"
+	help
+	  Includes the misc-modules in the kernel image.
+	  Used to understand buildroot external trees and package builds.

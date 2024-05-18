@@ -10,7 +10,7 @@ LDD_LICENSE_FILES = COPYING
 LDD_SITE_METHOD = local
 
 define LDD_BUILD_CMDS
-    cp $(BR2_EXTERNAL)/../include/* $(@D)
+     cp -rf $(BR2_EXTERNAL)/../include/* $(@D)/
 endef
 
 

@@ -15,7 +15,7 @@ start() {
     /etc/init.d/scull_load
     echo "scull loaded successfully."
     echo "Loading modules..."
-    /etc/init.d/module_load
+    /etc/init.d/module_load faulty
     echo "module loaded successfully."
 }
 

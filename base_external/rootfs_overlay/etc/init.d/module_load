@@ -4,6 +4,7 @@ module=$1
 device=$1
 # Support read/write for owner and group, read only for everyone using 644
 mode="664"
+path="/lib/modules/6.8.9/ldd/module"
 
 if [ $# -ne 1 ]; then
 	echo "Wrong number of arguments"
@@ -22,7 +23,7 @@ else
 fi
 
 echo "Load our module, exit on failure"
-insmod ./$module.ko $* || exit 1
+insmod $path/$module.ko $* || exit 1
 echo "Get the major number (allocated with allocate_chrdev_region) from /proc/devices"
 major=$(awk "\$2==\"$module\" {print \$1}" /proc/devices)
 if [ ! -z ${major} ]; then
