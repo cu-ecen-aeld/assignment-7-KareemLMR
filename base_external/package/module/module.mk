@@ -13,10 +13,5 @@ define MODULE_BUILD_CMDS
      cp -rf $(BR2_EXTERNAL)/../include/* $(@D)/
 endef
 
-
-define MODULE_INSTALL_TARGET_CMDS
-     $(INSTALL) -D -m 0755 $(@D)/*.ko $(BR2_ROOTFS_OVERLAY)/lib/modules/6.8.9/ldd/module
-endef
-
 $(eval $(kernel-module))
 $(eval $(generic-package))

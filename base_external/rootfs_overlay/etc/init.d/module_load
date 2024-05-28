@@ -4,7 +4,7 @@ module=$1
 device=$1
 # Support read/write for owner and group, read only for everyone using 644
 mode="664"
-path="/lib/modules/6.8.9/ldd/module"
+path="/lib/modules/5.10.162-cip24/extra"
 
 if [ $# -ne 1 ]; then
 	echo "Wrong number of arguments"

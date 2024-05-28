@@ -3,7 +3,7 @@
 module="scull"
 device="scull"
 mode="664"
-path="/lib/modules/6.8.9/ldd/scull"
+path="/lib/modules/5.10.162-cip24/extra"
 
 # Group: since distributions do it differently, look for wheel or use staff
 if grep -q '^staff:' /etc/group; then

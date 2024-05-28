@@ -17,6 +17,8 @@ start() {
     echo "Loading modules..."
     /etc/init.d/module_load faulty
     echo "module loaded successfully."
+    modprobe hello
+    echo "hello module loaded successfully."
 }
 
 # Function to stop the service
@@ -27,7 +29,8 @@ stop() {
     echo "Unloading modules..."
     /etc/init.d/module_unload
     echo "module unloaded successfully."
- 
+    rmmod hello
+    echo "hello module unloaded successfully."
 }
 
 # Script execution starts here
