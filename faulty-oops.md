@@ -1,4 +1,4 @@
-## Screenshots
+## Kernel OOPS Trace Analysis
 
 ![Alt text](oops-trace.png?raw=true "OOPS Trace")
 
