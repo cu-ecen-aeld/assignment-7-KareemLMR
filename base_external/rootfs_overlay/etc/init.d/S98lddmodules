@@ -15,7 +15,7 @@ start() {
     /etc/init.d/scull_load
     echo "scull loaded successfully."
     echo "Loading modules..."
-    modprobe faulty
+    /etc/init.d/module_load faulty
     echo "module loaded successfully."
     modprobe hello
     echo "hello module loaded successfully."
