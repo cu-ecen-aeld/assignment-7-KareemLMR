@@ -4,13 +4,13 @@ module=$1
 device=$1
 # Support read/write for owner and group, read only for everyone using 644
 mode="664"
-path="/lib/modules/5.10.162-cip24/extra"
+path="/lib/modules/6.6.29-yocto-standard/extra"
 
 if [ $# -ne 1 ]; then
-	echo "Wrong number of arguments"
-	echo "usage: $0 module_name"
-	echo "Will create a corresponding device /dev/module_name associated with module_name.ko"
-	exit 1
+        echo "Wrong number of arguments"
+        echo "usage: $0 module_name"
+        echo "Will create a corresponding device /dev/module_name associated with module_name.ko"
+        exit 1
 fi
 
 set -e
@@ -23,7 +23,7 @@ else
 fi
 
 echo "Load our module, exit on failure"
-modprobe $module || exit 1
+insmod $path/$module.ko || exit 1
 echo "Get the major number (allocated with allocate_chrdev_region) from /proc/devices"
 major=$(awk "\$2==\"$module\" {print \$1}" /proc/devices)
 if [ ! -z ${major} ]; then
