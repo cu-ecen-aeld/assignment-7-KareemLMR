@@ -19,7 +19,7 @@ ifneq ($(KERNELRELEASE),)
 
 scull-objs := main.o pipe.o access.o
 
-obj-m	:= scull.o
+obj-m	:= scull.o hello.o faulty.o
 
 else
 
