@@ -5,12 +5,18 @@ SUBDIRS =  misc-progs misc-modules \
 	   sbull snull short
 
 modules:
-	for n in $(SUBDIRS); do $(MAKE) -C $$n modules || exit 1; done
+	cd scull
+        $(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+        cd ../misc-modules
+        $(MAKE) -C $(KERNELDIR) M=$(PWD) modules
 
 all: subdirs
 
 subdirs:
-	for n in $(SUBDIRS); do $(MAKE) -C $$n || exit 1; done
+        cd scull
+        $(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+        cd ../misc-modules
+        $(MAKE) -C $(KERNELDIR) M=$(PWD) modules
 
 clean:
 	for n in $(SUBDIRS); do $(MAKE) -C $$n clean; done
