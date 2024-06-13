@@ -6,17 +6,17 @@ SUBDIRS =  misc-progs misc-modules \
 
 modules:
 	cd scull
-        $(MAKE) -C $(KERNELDIR) M=$(PWD) modules
-        cd ../misc-modules
-        $(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+	cd ../misc-modules
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
 
 all: subdirs
 
 subdirs:
-        cd scull
-        $(MAKE) -C $(KERNELDIR) M=$(PWD) modules
-        cd ../misc-modules
-        $(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+	cd scull
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+	cd ../misc-modules
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
 
 clean:
 	for n in $(SUBDIRS); do $(MAKE) -C $$n clean; done
