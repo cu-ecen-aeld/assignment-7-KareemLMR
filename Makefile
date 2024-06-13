@@ -4,6 +4,9 @@ SUBDIRS =  misc-progs misc-modules \
 	   pci usb\
 	   sbull snull short
 
+modules:
+	for n in $(SUBDIRS); do $(MAKE) -C $$n modules || exit 1; done
+
 all: subdirs
 
 subdirs:
